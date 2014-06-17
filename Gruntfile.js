@@ -9,7 +9,7 @@ module.exports = function (grunt) {
             src: [
                 'src/index.js',
                 'src/blocks/index.js',
-                'src/blocks/textLength.js'
+                'src/blocks/**/*.js',
             ]
         },
 
@@ -48,7 +48,10 @@ module.exports = function (grunt) {
                 options: {
                     files: [
                         'bower_components/blockly/blockly_compressed.js',
+                        'bower_components/blockly/javascript_compressed.js',
+                        'bower_components/blockly/blocks_compressed.js',
                         '<%= paths.src %>',
+                        'test/setup.js',
                         'test/**/*.test.js'
                     ]
                 },
