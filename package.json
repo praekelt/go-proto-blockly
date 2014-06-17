@@ -21,5 +21,12 @@
   "bugs": {
     "url": "https://github.com/praekelt/go-proto-blockly/issues"
   },
-  "homepage": "https://github.com/praekelt/go-proto-blockly"
+  "homepage": "https://github.com/praekelt/go-proto-blockly",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-concat": "^0.4.0",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-watch": "^0.6.1"
+  }
 }
