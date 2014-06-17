@@ -1,0 +1,27 @@
+{
+  "name": "go-proto-blockly",
+  "main": "go-proto-blockly.js",
+  "version": "0.0.0",
+  "homepage": "https://github.com/praekelt/go-proto-blockly",
+  "authors": [
+    "Praekelt Foundation"
+  ],
+  "description": "A prototype blockly interface and custom blocks for creating Vumi Javascript Sandbox programs.",
+  "keywords": [
+    "blockly",
+    "vumi",
+    "javascript",
+    "sandbox"
+  ],
+  "license": "BSD",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "blockly": "svn+http://blockly.googlecode.com/svn"
+  }
+}

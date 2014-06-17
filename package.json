@@ -1,0 +1,39 @@
+{
+  "name": "go-proto-blockly",
+  "version": "0.0.0",
+  "description": "A prototype blockly interface and custom blocks for creating Vumi Javascript Sandbox programs.",
+  "main": "index.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/praekelt/go-proto-blockly.git"
+  },
+  "keywords": [
+    "blockly",
+    "vumi",
+    "javascript",
+    "sandbox"
+  ],
+  "author": "Praekelt Foundation",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/praekelt/go-proto-blockly/issues"
+  },
+  "homepage": "https://github.com/praekelt/go-proto-blockly",
+  "devDependencies": {
+    "bower": "^1.3.5",
+    "grunt": "^0.4.5",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-concat": "^0.4.0",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-karma": "^0.8.3",
+    "karma": "^0.12.16",
+    "karma-chai": "^0.1.0",
+    "karma-mocha": "^0.1.4",
+    "karma-phantomjs-launcher": "^0.1.4",
+    "mocha": "^1.20.1"
+  }
+}

@@ -1,0 +1,1 @@
+goBlockly.blocks = {};
