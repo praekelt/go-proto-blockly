@@ -1,10 +1,18 @@
 module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-jshint');
-    grunt.loadNpmTasks('grunt-mocha-test');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-karma');
 
     grunt.initConfig({
+        paths: {
+            src: [
+                'src/index.js',
+                'src/blocks/index.js',
+                'src/blocks/textLength.js'
+            ]
+        },
+
         jshint: {
             options: {jshintrc: '.jshintrc'},
             all: [
@@ -29,20 +37,36 @@ module.exports = function (grunt) {
         },
 
         concat: {
-            app: {
-                src: [
-                    'src/index.js',
-                    'src/blocks/index.js',
-                    'src/blocks/textLength.js'
-                ],
+            goBlockly: {
+                src: ['<%= paths.src %>'],
                 dest: 'go-proto-blockly.js'
+            }
+        },
+
+        karma: {
+            dev: {
+                options: {
+                    files: [
+                        '<%= paths.src %>',
+                        'test/**/*.test.js'
+                    ]
+                },
+                singleRun: true,
+                reporters: ['dots'],
+                browsers: ['PhantomJS'],
+                frameworks: ['mocha', 'chai'],
+                plugins: [
+                    'karma-chai',
+                    'karma-mocha',
+                    'karma-phantomjs-launcher'
+                ]
             }
         }
     });
 
     grunt.registerTask('test', [
         'jshint',
-        'build'
+        'karma'
     ]);
 
     grunt.registerTask('build', [
