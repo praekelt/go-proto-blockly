@@ -1,3 +1,7 @@
+beforeEach(function () {
+	Blockly.inject(document.body.appendChild(document.createElement("div")));
+});
+
 describe("goBlockly:blocks:textLength:js", function() {
     it("should generate a text length lookup", function() {
         var text = Blockly.Block.obtain(Blockly.mainWorkspace, 'text');

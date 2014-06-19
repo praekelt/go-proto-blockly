@@ -51,7 +51,7 @@ module.exports = function (grunt) {
                         'bower_components/blockly/javascript_compressed.js',
                         'bower_components/blockly/blocks_compressed.js',
                         '<%= paths.src %>',
-                        'test/setup.js',
+                        //'test/setup.js',
                         'test/**/*.test.js'
                     ]
                 },
