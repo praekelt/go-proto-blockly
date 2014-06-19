@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <div id="blockly"></div>
+    <script type="text/javascript" src="../bower_components/blockly/blockly_compressed.js"></script>
+    <script type="text/javascript" src="../bower_components/blockly/blocks_compressed.js"></script>
+    <script type="text/javascript" src="../bower_components/blockly/javascript_compressed.js"></script>
+    <script type="text/javascript" src="../go-proto-blockly.js"></script>
+    <script>
+    Blockly.inject(document.getElementById('blockly'));
+ 
+    var number = Blockly.Block.obtain(Blockly.mainWorkspace, 'math_number');
+    number.initSvg();
+    number.render();
+ 
+    var text = Blockly.Block.obtain(Blockly.mainWorkspace, 'text');
+    text.initSvg();
+    text.render();
+ 
+    var block = Blockly.Block.obtain(Blockly.mainWorkspace, 'textLength');
+    block.initSvg();
+    block.render();
+    </script>
+  </body>
+</html>
