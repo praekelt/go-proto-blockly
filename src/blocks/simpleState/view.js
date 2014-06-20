@@ -11,7 +11,7 @@
 		        .setCheck("Array")
 		        .appendField("Choices");
 		    this.appendValueInput("NEXT")
-		        .setCheck("state")
+		        .setCheck("String") // would ideally be a drop down menu or function of some kind
 		        .appendField("Next state");
 		    this.setTooltip('A simple state containing any number of choices');
         }
