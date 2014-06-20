@@ -12,18 +12,25 @@
     <script>
     Blockly.inject(document.getElementById('blockly'));
  
-    var number = Blockly.Block.obtain(Blockly.mainWorkspace, 'math_number');
-    number.initSvg();
-    number.render();
- 
-    var text = Blockly.Block.obtain(Blockly.mainWorkspace, 'text');
-    text.initSvg();
-    text.render();
+    var text0 = Blockly.Block.obtain(Blockly.mainWorkspace, 'text');
+    text0.initSvg();
+    text0.render();
+
+    var text1 = Blockly.Block.obtain(Blockly.mainWorkspace, 'text');
+    text1.initSvg();
+    text1.render();
     
     var block = Blockly.Block.obtain(Blockly.mainWorkspace, 'textLength');
     block.initSvg();
     block.render();
     
+    var choice0 = Blockly.Block.obtain(Blockly.mainWorkspace, 'choice');
+    choice0.initSvg();
+    choice0.render();
+
+    var choice1 = Blockly.Block.obtain(Blockly.mainWorkspace, 'choice');
+    choice1.initSvg();
+    choice1.render();
 
     var simpleState = Blockly.Block.obtain(Blockly.mainWorkspace, 'simpleState');
     simpleState.initSvg();

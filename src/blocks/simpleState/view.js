@@ -8,7 +8,7 @@
 		        .setCheck("String")
 		        .appendField("Name");
 		    this.appendStatementInput("CHOICES")
-		        .setCheck("Array")
+		        .setCheck("choice")
 		        .appendField("Choices");
 		    this.appendValueInput("NEXT")
 		        .setCheck("String") // would ideally be a drop down menu or function of some kind
