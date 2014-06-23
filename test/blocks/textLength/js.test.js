@@ -1,5 +1,12 @@
+var el;
+
 beforeEach(function () {
-	Blockly.inject(document.body.appendChild(document.createElement("div")));
+	el = document.createElement("div");
+	Blockly.inject(document.body.appendChild(el));
+});
+
+afterEach(function () {
+	document.body.removeChild(el);
 });
 
 describe("goBlockly:blocks:textLength:js", function() {
