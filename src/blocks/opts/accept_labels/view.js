@@ -7,8 +7,8 @@
             this.appendValueInput("VALUE")
                 .setCheck("Boolean");
             this.setInputsInline(true);
-            this.setPreviousStatement(true, "accept_labels");
-            this.setNextStatement(true, "accept_labels");
+            this.setPreviousStatement(true, ["error", "accept_labels", "send_reply", "continue_session", "events"]);
+            this.setNextStatement(true, ["error", "accept_labels", "send_reply", "continue_session", "events"]);
             this.setTooltip('');
         }
     };
