@@ -37,12 +37,12 @@ goBlockly.blocks = {};
         init: function() {
             this.setColour(120);
             this.appendDummyInput()
-                .appendField("Accept Labels");
+                .appendField("Accept labels");
             this.appendValueInput("VALUE")
                 .setCheck("Boolean");
             this.setInputsInline(true);
-            this.setPreviousStatement(true, "accept_labels");
-            this.setNextStatement(true, "accept_labels");
+            this.setPreviousStatement(true, ["error", "accept_labels", "send_reply", "continue_session", "events"]);
+            this.setNextStatement(true, ["error", "accept_labels", "send_reply", "continue_session", "events"]);
             this.setTooltip('');
         }
     };
@@ -81,6 +81,30 @@ goBlockly.blocks = {};
     };
 })();
 
+// dummy function
+(function() {
+    Blockly.JavaScript.continue_session = function(block) {
+        var value_value = Blockly.JavaScript.valueToCode(block, 'VALUE', Blockly.JavaScript.ORDER_ATOMIC);
+        // TODO: Assemble JavaScript into code variable.
+        var code = value_value;
+        return code;
+    };
+})();
+(function() {
+    Blockly.Blocks.continue_session = {
+        init: function() {
+            this.setColour(120);
+            this.appendDummyInput()
+                .appendField("Continue session");
+            this.appendValueInput("VALUE")
+                .setCheck("Boolean");
+            this.setInputsInline(true);
+            this.setPreviousStatement(true, ["error", "accept_labels", "send_reply", "continue_session", "events"]);
+            this.setNextStatement(true, ["error", "accept_labels", "send_reply", "continue_session", "events"]);
+            this.setTooltip('');
+        }
+    };
+})();
 // dummy function
 (function() {
     Blockly.JavaScript.send_reply = function(block) {
