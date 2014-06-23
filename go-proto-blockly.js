@@ -3,7 +3,7 @@ window.goBlockly = {};
 goBlockly.blocks = {};
 
 (function() {
-    Blockly.JavaScript.choice = function(block) {
+    Blockly.JavaScript.Choice = function(block) {
 		var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
 		var value_state = Blockly.JavaScript.valueToCode(block, 'STATE', Blockly.JavaScript.ORDER_ATOMIC);
   
@@ -14,7 +14,7 @@ goBlockly.blocks = {};
 })();
 
 (function() {
-    Blockly.Blocks.choice = {
+    Blockly.Blocks.Choice = {
         init: function() {
 		    this.setColour(330);
 		    this.appendDummyInput()
@@ -28,8 +28,8 @@ goBlockly.blocks = {};
 		        .setAlign(Blockly.ALIGN_RIGHT)
 		        .appendField("State");
 		    this.setInputsInline(true);
-		    this.setPreviousStatement(true, "choice");
-		    this.setNextStatement(true, "choice");
+		    this.setPreviousStatement(true, "Choice");
+		    this.setNextStatement(true, "Choice");
 		    this.setTooltip('A state choice');
         }
     };
@@ -86,7 +86,7 @@ goBlockly.blocks = {};
         init: function() {
 		    this.setColour(230);
 		    this.appendDummyInput()
-		        .appendField("SimpleState");
+		        .appendField("SIMPLE STATE");
 		    this.appendValueInput("NAME")
 		        .setCheck("String")
 		        .appendField("Name");

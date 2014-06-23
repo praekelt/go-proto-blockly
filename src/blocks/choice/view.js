@@ -1,5 +1,5 @@
 (function() {
-    Blockly.Blocks.choice = {
+    Blockly.Blocks.Choice = {
         init: function() {
 		    this.setColour(330);
 		    this.appendDummyInput()
@@ -13,8 +13,8 @@
 		        .setAlign(Blockly.ALIGN_RIGHT)
 		        .appendField("State");
 		    this.setInputsInline(true);
-		    this.setPreviousStatement(true, "choice");
-		    this.setNextStatement(true, "choice");
+		    this.setPreviousStatement(true, "Choice");
+		    this.setNextStatement(true, "Choice");
 		    this.setTooltip('A state choice');
         }
     };
