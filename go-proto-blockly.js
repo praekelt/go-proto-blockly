@@ -3,13 +3,59 @@ window.goBlockly = {};
 goBlockly.blocks = {};
 
 (function() {
+    Blockly.JavaScript.textLength = function(block) {
+        var arg0 = Blockly.JavaScript.valueToCode(
+            block, 'VALUE', Blockly.JavaScript.ORDER_FUNCTION_CALL) || "''";
+        return [arg0 + '.length', Blockly.JavaScript.ORDER_MEMBER];
+    };
+})();
+
+(function() {
+    Blockly.Blocks.textLength = {
+        init: function() {
+            this.appendValueInput('VALUE')
+                .setCheck('String')
+                .appendField('length');
+
+            this.setOutput(true, 'Number');
+            this.setTooltip('Returns number of letters in the provided text.');
+        }
+    };
+})();
+
+// dummy function
+(function() {
+    Blockly.JavaScript.accept_label = function(block) {
+        var value_value = Blockly.JavaScript.valueToCode(block, 'VALUE', Blockly.JavaScript.ORDER_ATOMIC);
+        // TODO: Assemble JavaScript into code variable.
+        var code = value_value;
+        return code;
+    };
+})();
+(function() {
+    Blockly.Blocks.accept_label = {
+        init: function() {
+            this.setColour(120);
+            this.appendDummyInput()
+                .appendField("Accept Label");
+            this.appendValueInput("VALUE")
+                .setCheck("Boolean");
+            this.setInputsInline(true);
+            this.setPreviousStatement(true, "accept_label");
+            this.setNextStatement(true, "accept_label");
+            this.setTooltip('');
+        }
+    };
+})();
+// dummy function
+(function() {
     Blockly.JavaScript.Choice = function(block) {
 		var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
 		var value_state = Blockly.JavaScript.valueToCode(block, 'STATE', Blockly.JavaScript.ORDER_ATOMIC);
   
-  		var arg0 = value_name + value_state;
+  		var code = value_name + value_state;
 
-        return [arg0 + '.length', Blockly.JavaScript.ORDER_MEMBER];
+        return [code + '.length', Blockly.JavaScript.ORDER_MEMBER];
     };
 })();
 
@@ -35,6 +81,31 @@ goBlockly.blocks = {};
     };
 })();
 
+// dummy function
+(function() {
+    Blockly.JavaScript.send_reply = function(block) {
+		var value_value = Blockly.JavaScript.valueToCode(block, 'VALUE', Blockly.JavaScript.ORDER_ATOMIC);
+		// TODO: Assemble JavaScript into code variable.
+		var code = value_value;
+		return code;
+	};
+})();
+// dummy function
+(function() {
+    Blockly.Blocks.send_reply = {
+        init: function() {
+            this.setColour(120);
+            this.appendDummyInput()
+                .appendField("Send reply");
+            this.appendValueInput("VALUE")
+                .setCheck("Boolean");
+            this.setInputsInline(true);
+            this.setPreviousStatement(true, ["error", "accept_labels", "send_reply", "continue_session", "events"]);
+            this.setNextStatement(true, ["error", "accept_labels", "send_reply", "continue_session", "events"]);
+            this.setTooltip('');
+        }
+    };
+})();
 // dummy function
 (function() {
 	Blockly.JavaScript.MenuState = function(block) {
@@ -97,27 +168,6 @@ goBlockly.blocks = {};
 		        .setCheck("String") // would ideally be a drop down menu or function of some kind
 		        .appendField("Next state");
 		    this.setTooltip('A simple state containing any number of choices');
-        }
-    };
-})();
-
-(function() {
-    Blockly.JavaScript.textLength = function(block) {
-        var arg0 = Blockly.JavaScript.valueToCode(
-            block, 'VALUE', Blockly.JavaScript.ORDER_FUNCTION_CALL) || "''";
-        return [arg0 + '.length', Blockly.JavaScript.ORDER_MEMBER];
-    };
-})();
-
-(function() {
-    Blockly.Blocks.textLength = {
-        init: function() {
-            this.appendValueInput('VALUE')
-                .setCheck('String')
-                .appendField('length');
-
-            this.setOutput(true, 'Number');
-            this.setTooltip('Returns number of letters in the provided text.');
         }
     };
 })();
