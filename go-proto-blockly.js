@@ -60,8 +60,8 @@ goBlockly.blocks = {};
 	        .setCheck("String")
 	        .appendField("Question");
 	    this.appendStatementInput("CHOICES")
-	        .setCheck("Array")
-	        .appendField("choice");
+	        .setCheck("Choice")
+	        .appendField("Choices");
 	    this.appendStatementInput("OPTS")
 	        .setCheck(["error", "accept_labels", "send_reply", "continue_session", "events"])
 	        .appendField("Optional");
