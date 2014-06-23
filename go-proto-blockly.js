@@ -25,7 +25,7 @@ goBlockly.blocks = {};
 
 // dummy function
 (function() {
-    Blockly.JavaScript.accept_label = function(block) {
+    Blockly.JavaScript.accept_labels = function(block) {
         var value_value = Blockly.JavaScript.valueToCode(block, 'VALUE', Blockly.JavaScript.ORDER_ATOMIC);
         // TODO: Assemble JavaScript into code variable.
         var code = value_value;
@@ -33,16 +33,16 @@ goBlockly.blocks = {};
     };
 })();
 (function() {
-    Blockly.Blocks.accept_label = {
+    Blockly.Blocks.accept_labels = {
         init: function() {
             this.setColour(120);
             this.appendDummyInput()
-                .appendField("Accept Label");
+                .appendField("Accept Labels");
             this.appendValueInput("VALUE")
                 .setCheck("Boolean");
             this.setInputsInline(true);
-            this.setPreviousStatement(true, "accept_label");
-            this.setNextStatement(true, "accept_label");
+            this.setPreviousStatement(true, "accept_labels");
+            this.setNextStatement(true, "accept_labels");
             this.setTooltip('');
         }
     };

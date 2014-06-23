@@ -3,7 +3,7 @@
         init: function() {
             this.setColour(120);
             this.appendDummyInput()
-                .appendField("Accept Labels");
+                .appendField("Accept labels");
             this.appendValueInput("VALUE")
                 .setCheck("Boolean");
             this.setInputsInline(true);
