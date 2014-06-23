@@ -3,7 +3,7 @@
 	  init: function() {
 	    this.setColour(230);
 	    this.appendDummyInput()
-	        .appendField("MenuState");
+	        .appendField("MENU STATE");
 	    this.appendValueInput("NAME")
 	        .setCheck("String")
 	        .appendField("Name");
