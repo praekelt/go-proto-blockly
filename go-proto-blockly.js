@@ -35,6 +35,40 @@ goBlockly.blocks = {};
     };
 })();
 
+// dummy function
+(function() {
+	Blockly.JavaScript.MenuState = function(block) {
+		var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
+		var value_question = Blockly.JavaScript.valueToCode(block, 'QUESTION', Blockly.JavaScript.ORDER_ATOMIC);
+		var statements_choices = Blockly.JavaScript.statementToCode(block, 'CHOICES');
+		var statements_opts = Blockly.JavaScript.statementToCode(block, 'OPTS');
+		// TODO: Assemble JavaScript into code variable.
+		var code = value_name + value_question + statements_choices + statements_opts;
+		return code;
+	};
+})();
+(function() {
+	Blockly.Blocks.MenuState = {
+	  init: function() {
+	    this.setColour(230);
+	    this.appendDummyInput()
+	        .appendField("MENU STATE");
+	    this.appendValueInput("NAME")
+	        .setCheck("String")
+	        .appendField("Name");
+	    this.appendValueInput("QUESTION")
+	        .setCheck("String")
+	        .appendField("Question");
+	    this.appendStatementInput("CHOICES")
+	        .setCheck("Array")
+	        .appendField("choice");
+	    this.appendStatementInput("OPTS")
+	        .setCheck(["error", "accept_labels", "send_reply", "continue_session", "events"])
+	        .appendField("Optional");
+	    this.setTooltip('');
+	  }
+	};
+})();
 (function() {
     Blockly.JavaScript.simpleState = function(block) {
     	var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC) || "";
