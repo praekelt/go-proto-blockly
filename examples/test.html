@@ -12,7 +12,7 @@
     <script>
     Blockly.inject(document.getElementById('blockly'));
  
-    var text0 = Blockly.Block.obtain(Blockly.mainWorkspace, 'text');
+    /*var text0 = Blockly.Block.obtain(Blockly.mainWorkspace, 'text');
     text0.initSvg();
     text0.render();
 
@@ -51,6 +51,14 @@
     var continue_session = Blockly.Block.obtain(Blockly.mainWorkspace, 'continue_session');
     continue_session.initSvg();
     continue_session.render();
+
+    var error = Blockly.Block.obtain(Blockly.mainWorkspace, 'error');
+    error.initSvg();
+    error.render();*/
+
+    var bool = Blockly.Block.obtain(Blockly.mainWorkspace, 'controls_if');
+    bool.initSvg();
+    bool.render();
 
     </script>
   </body>

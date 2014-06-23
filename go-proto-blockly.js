@@ -107,6 +107,30 @@ goBlockly.blocks = {};
 })();
 // dummy function
 (function() {
+	Blockly.JavaScript.error = function(block) {
+	    var value_error_text = Blockly.JavaScript.valueToCode(block, 'ERROR_TEXT', Blockly.JavaScript.ORDER_ATOMIC);
+	    // TODO: Assemble JavaScript into code variable.
+	    var code = value_error_text;
+	    return code;
+	};
+})();
+(function() {
+    Blockly.Blocks.error = {
+        init: function() {
+            this.setColour(120);
+            this.appendDummyInput()
+                .appendField("Error");
+            this.appendValueInput("ERROR_TEXT")
+                .setCheck("String");
+            this.setInputsInline(true);
+            this.setPreviousStatement(true, ["error", "accept_labels", "send_reply", "continue_session", "events"]);
+            this.setNextStatement(true, ["error", "accept_labels", "send_reply", "continue_session", "events"]);
+            this.setTooltip('');
+        }
+    };
+})();
+// dummy function
+(function() {
     Blockly.JavaScript.send_reply = function(block) {
 		var value_value = Blockly.JavaScript.valueToCode(block, 'VALUE', Blockly.JavaScript.ORDER_ATOMIC);
 		// TODO: Assemble JavaScript into code variable.
@@ -114,7 +138,6 @@ goBlockly.blocks = {};
 		return code;
 	};
 })();
-// dummy function
 (function() {
     Blockly.Blocks.send_reply = {
         init: function() {
