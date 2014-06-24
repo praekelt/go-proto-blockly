@@ -47,12 +47,24 @@ module.exports = function (grunt) {
             dev: {
                 options: {
                     files: [
-                        'bower_components/blockly/blockly_compressed.js',
-                        'bower_components/blockly/javascript_compressed.js',
-                        'bower_components/blockly/blocks_compressed.js',
-                        '<%= paths.src %>',
-                        'test/setup.js',
-                        'test/**/*.test.js'
+                      'test/init.js',
+                      {
+                          included: false,
+                          pattern: [
+                              'bower_components/closure-library-read-only',
+                              '**/*',
+                          ].join('/')
+                      },
+                      'bower_components/blockly/blockly_uncompressed.js',
+                      'bower_components/blockly/generators/**/*.js',
+                      'bower_components/blockly/blocks/**/*.js',
+                      {
+                          pattern: 'bower_components/blockly/**/*',
+                          included: false
+                      },
+                      '<%= paths.src %>',
+                      'test/setup.js',
+                      'test/**/*.test.js'
                     ]
                 },
                 singleRun: true,

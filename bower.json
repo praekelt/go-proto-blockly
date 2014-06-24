@@ -23,5 +23,8 @@
   ],
   "dependencies": {
     "blockly": "svn+http://blockly.googlecode.com/svn"
+  },
+  "devDependencies": {
+    "closure-library-read-only": "closurelibrary#*"
   }
 }
