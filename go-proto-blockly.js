@@ -2,6 +2,8 @@ window.goBlockly = {};
 
 goBlockly.blocks = {};
 
+goBlockly.blocks.opts = {};
+goBlockly.blocks.opts.types = ['accept_labels', 'send_reply', 'continue_session', 'events'];
 (function() {
     Blockly.JavaScript.textLength = function(block) {
         var arg0 = Blockly.JavaScript.valueToCode(
@@ -129,8 +131,6 @@ goBlockly.blocks = {};
         }
     };
 })();
-goBlockly.blocks.opts = {};
-goBlockly.blocks.opts.types = ['accept_labels', 'send_reply', 'continue_session', 'events'];
 // dummy function
 (function() {
     Blockly.JavaScript.opts_send_reply = function(block) {

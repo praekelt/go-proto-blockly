@@ -9,6 +9,7 @@ module.exports = function (grunt) {
             src: [
                 'src/index.js',
                 'src/blocks/index.js',
+                'src/blocks/opts/index.js',
                 'src/blocks/**/*.js',
             ]
         },
