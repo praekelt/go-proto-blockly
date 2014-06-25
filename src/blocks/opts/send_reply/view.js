@@ -7,8 +7,8 @@
             this.appendValueInput("VALUE")
                 .setCheck("Boolean");
             this.setInputsInline(true);
-            this.setPreviousStatement(true, ["error", "accept_labels", "send_reply", "continue_session", "events"]);
-            this.setNextStatement(true, ["error", "accept_labels", "send_reply", "continue_session", "events"]);
+            this.setPreviousStatement(true, goBlockly.blocks.opts.types);
+            this.setNextStatement(true, goBlockly.blocks.opts.types);
             this.setTooltip('Whether or not a reply should be sent to the user’s message. Default is true.');
         }
     };
