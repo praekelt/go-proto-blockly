@@ -16,7 +16,7 @@
         this.appendStatementInput("OPTS")
             .setCheck(["error", "accept_labels", "send_reply", "continue_session", "events"])
             .appendField("Optional");
-        this.setTooltip('');
+        this.setTooltip('A ChoiceState() whose Choice() values are either state names or state options objects. Supports the same parameters as ChoiceState() except that opts.next isn’t available.');
       }
     };
 })();
