@@ -1,5 +1,5 @@
 (function() {
-    Blockly.Blocks.accept_labels = {
+    Blockly.Blocks.opt_accept_labels = {
         init: function() {
             this.setColour(120);
             this.appendDummyInput()
