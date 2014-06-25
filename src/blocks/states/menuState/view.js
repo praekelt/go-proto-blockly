@@ -1,5 +1,5 @@
 (function() {
-    Blockly.Blocks.MenuState = {
+    Blockly.Blocks.state_menu = {
       init: function() {
         this.setColour(230);
         this.appendDummyInput()

@@ -1,6 +1,6 @@
 // dummy function
 (function() {
-    Blockly.JavaScript.MenuState = function(block) {
+    Blockly.JavaScript.state_menu = function(block) {
         var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
         var value_question = Blockly.JavaScript.valueToCode(block, 'QUESTION', Blockly.JavaScript.ORDER_ATOMIC);
         var statements_choices = Blockly.JavaScript.statementToCode(block, 'CHOICES');
