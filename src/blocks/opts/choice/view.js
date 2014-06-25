@@ -1,5 +1,5 @@
 (function() {
-    Blockly.Blocks.Choice = {
+    Blockly.Blocks.choice = {
         init: function() {
             this.setColour(330);
             this.appendDummyInput()

@@ -1,6 +1,6 @@
 // dummy function
 (function() {
-    Blockly.JavaScript.Choice = function(block) {
+    Blockly.JavaScript.choice = function(block) {
         var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
         var value_state = Blockly.JavaScript.valueToCode(block, 'STATE', Blockly.JavaScript.ORDER_ATOMIC);
   
