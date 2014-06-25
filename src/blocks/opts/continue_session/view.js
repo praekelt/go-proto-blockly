@@ -1,5 +1,5 @@
 (function() {
-    Blockly.Blocks.continue_session = {
+    Blockly.Blocks.opts_continue_session = {
         init: function() {
             this.setColour(120);
             this.appendDummyInput()
