@@ -5,14 +5,18 @@
   </head>
   <body>
     <div id="blockly"></div>
-    <script type="text/javascript" src="../bower_components/blockly/blockly_compressed.js"></script>
-    <script type="text/javascript" src="../bower_components/blockly/blocks_compressed.js"></script>
-    <script type="text/javascript" src="../bower_components/blockly/javascript_compressed.js"></script>
-    <script type="text/javascript" src="../go-proto-blockly.js"></script>
+    <script type="text/javascript" src="./bower_components/blockly/blockly_compressed.js"></script>
+    <script type="text/javascript" src="./bower_components/blockly/blocks_compressed.js"></script>
+    <script type="text/javascript" src="./bower_components/blockly/msg/js/en.js"></script>
+    <script type="text/javascript" src="./bower_components/blockly/javascript_compressed.js"></script>
+    <script type="text/javascript" src="./bower_components/blockly/blocks/text.js"></script>
+    <script type="text/javascript" src="./bower_components/blockly/blocks/math.js"></script>
+    <script type="text/javascript" src="./bower_components/blockly/blocks/logic.js"></script>
+    <script type="text/javascript" src="./go-proto-blockly.js"></script>
     <script>
     Blockly.inject(document.getElementById('blockly'));
  
-    /*var text0 = Blockly.Block.obtain(Blockly.mainWorkspace, 'text');
+    var text0 = Blockly.Block.obtain(Blockly.mainWorkspace, 'text');
     text0.initSvg();
     text0.render();
 
@@ -54,9 +58,9 @@
 
     var error = Blockly.Block.obtain(Blockly.mainWorkspace, 'error');
     error.initSvg();
-    error.render();*/
+    error.render();
 
-    var bool = Blockly.Block.obtain(Blockly.mainWorkspace, 'controls_if');
+    var bool = Blockly.Block.obtain(Blockly.mainWorkspace, 'logic_boolean');
     bool.initSvg();
     bool.render();
 
