@@ -1,5 +1,5 @@
 (function() {
-    Blockly.Blocks.send_reply = {
+    Blockly.Blocks.opts_send_reply = {
         init: function() {
             this.setColour(120);
             this.appendDummyInput()
