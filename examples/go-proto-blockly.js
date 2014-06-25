@@ -1,1 +1,0 @@
-/Users/meradarichter/git/Praekelt/go-proto-blockly/go-proto-blockly.js
