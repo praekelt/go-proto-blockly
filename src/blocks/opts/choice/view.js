@@ -4,14 +4,14 @@
             this.setColour(330);
             this.appendDummyInput()
                 .appendField("Choice");
-            this.appendValueInput("NAME")
+            this.appendValueInput("LABEL")
                 .setCheck("String")
                 .setAlign(Blockly.ALIGN_RIGHT)
-                .appendField("Name");
-            this.appendValueInput("STATE")
+                .appendField("Label");
+            this.appendValueInput("VALUE")
                 .setCheck("String")
                 .setAlign(Blockly.ALIGN_RIGHT)
-                .appendField("State");
+                .appendField("Value");
             this.setInputsInline(true);
             this.setPreviousStatement(true, "Choice");
             this.setNextStatement(true, "Choice");
