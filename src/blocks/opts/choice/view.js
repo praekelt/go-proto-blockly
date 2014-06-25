@@ -15,7 +15,7 @@
             this.setInputsInline(true);
             this.setPreviousStatement(true, "Choice");
             this.setNextStatement(true, "Choice");
-            this.setTooltip('A state choice');
+            this.setTooltip('An individual choice that the user can select inside a ChoiceState()');
         }
     };
 })();
