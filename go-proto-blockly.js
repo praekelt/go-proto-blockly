@@ -160,6 +160,40 @@ goBlockly.blocks.opts.types = ['accept_labels', 'send_reply', 'continue_session'
     Blockly.JavaScript.state_menu = function(block) {
         var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
         var value_question = Blockly.JavaScript.valueToCode(block, 'QUESTION', Blockly.JavaScript.ORDER_ATOMIC);
+        var statements_opts = Blockly.JavaScript.statementToCode(block, 'OPTS');
+        var value_next = Blockly.JavaScript.valueToCode(block, 'NEXT', Blockly.JavaScript.ORDER_ATOMIC);
+        
+        // TODO: Assemble JavaScript into code variable.
+        var code = value_name + value_question + statements_opts + value_next;
+        return code;
+    };
+})();
+(function() {
+    Blockly.Blocks.state_freetext = {
+        init: function() {
+            this.setColour(230);
+            this.appendDummyInput()
+                .appendField("FREETEXT STATE");
+            this.appendValueInput("NAME")
+                .setCheck("String")
+                .appendField("Name");
+            this.appendValueInput("QUESTION")
+                .setCheck("String")
+                .appendField("Question");
+            this.appendStatementInput("OPTS")
+                .setCheck(goBlockly.blocks.opts.types)
+                .appendField("Optional");
+            this.appendValueInput("NEXT")
+                .appendField("Next state");
+            this.setTooltip('A state which displays a text, then allows the user to respond with any text.');
+        }
+    };
+})();
+// dummy function
+(function() {
+    Blockly.JavaScript.state_menu = function(block) {
+        var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
+        var value_question = Blockly.JavaScript.valueToCode(block, 'QUESTION', Blockly.JavaScript.ORDER_ATOMIC);
         var statements_choices = Blockly.JavaScript.statementToCode(block, 'CHOICES');
         var statements_opts = Blockly.JavaScript.statementToCode(block, 'OPTS');
         // TODO: Assemble JavaScript into code variable.
