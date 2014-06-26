@@ -14,7 +14,7 @@
             .setCheck("Choice")
             .appendField("Choices");
         this.appendStatementInput("OPTS")
-            .setCheck(["error", "accept_labels", "send_reply", "continue_session", "events"])
+            .setCheck(goBlockly.blocks.opts.types)
             .appendField("Optional");
         this.setTooltip('A ChoiceState() whose Choice() values are either state names or state options objects. Supports the same parameters as ChoiceState() except that opts.next isn’t available.');
       }
