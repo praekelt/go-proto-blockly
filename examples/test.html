@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <div id="blockly"></div>
+    <script type="text/javascript" src="../bower_components/blockly/blockly_compressed.js"></script>
+    <script type="text/javascript" src="../bower_components/blockly/blocks_compressed.js"></script>
+    <script type="text/javascript" src="../bower_components/blockly/msg/js/en.js"></script>
+    <script type="text/javascript" src="../bower_components/blockly/javascript_compressed.js"></script>
+    <script type="text/javascript" src="../bower_components/blockly/blocks/text.js"></script>
+    <script type="text/javascript" src="../bower_components/blockly/blocks/math.js"></script>
+    <script type="text/javascript" src="../bower_components/blockly/blocks/logic.js"></script>
+    <script type="text/javascript" src="../go-proto-blockly.js"></script>
+    <script>
+    Blockly.inject(document.getElementById('blockly'));
+ 
+    var text0 = Blockly.Block.obtain(Blockly.mainWorkspace, 'text');
+    text0.initSvg();
+    text0.render();
+
+    var text1 = Blockly.Block.obtain(Blockly.mainWorkspace, 'text');
+    text1.initSvg();
+    text1.render();
+    
+    var block = Blockly.Block.obtain(Blockly.mainWorkspace, 'textLength');
+    block.initSvg();
+    block.render();
+    
+    var choice0 = Blockly.Block.obtain(Blockly.mainWorkspace, 'choice');
+    choice0.initSvg();
+    choice0.render();
+
+    var choice1 = Blockly.Block.obtain(Blockly.mainWorkspace, 'choice');
+    choice1.initSvg();
+    choice1.render();
+
+    var menuState = Blockly.Block.obtain(Blockly.mainWorkspace, 'state_menu');
+    menuState.initSvg();
+    menuState.render();
+
+    var accept_labels = Blockly.Block.obtain(Blockly.mainWorkspace, 'opts_accept_labels');
+    accept_labels.initSvg();
+    accept_labels.render();
+
+    var send_reply = Blockly.Block.obtain(Blockly.mainWorkspace, 'opts_send_reply');
+    send_reply.initSvg();
+    send_reply.render();
+
+    var continue_session = Blockly.Block.obtain(Blockly.mainWorkspace, 'opts_continue_session');
+    continue_session.initSvg();
+    continue_session.render();
+
+    var error = Blockly.Block.obtain(Blockly.mainWorkspace, 'opts_error');
+    error.initSvg();
+    error.render();
+
+    var bool = Blockly.Block.obtain(Blockly.mainWorkspace, 'logic_boolean');
+    bool.initSvg();
+    bool.render();
+
+    </script>
+  </body>
+</html>
