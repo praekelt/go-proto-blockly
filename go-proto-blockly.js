@@ -157,6 +157,40 @@ goBlockly.blocks.opts.types = ['accept_labels', 'send_reply', 'continue_session'
 })();
 // dummy function
 (function() {
+    Blockly.JavaScript.state_end = function(block) {
+        var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
+        var value_text = Blockly.JavaScript.valueToCode(block, 'TEXT', Blockly.JavaScript.ORDER_ATOMIC);
+        var statements_opts = Blockly.JavaScript.statementToCode(block, 'OPTS');
+        var value_next = Blockly.JavaScript.valueToCode(block, 'NEXT', Blockly.JavaScript.ORDER_ATOMIC);
+        
+        // TODO: Assemble JavaScript into code variable.
+        var code = value_name + value_text + statements_opts + value_next;
+        return code;
+    };
+})();
+(function() {
+    Blockly.Blocks.state_end = {
+        init: function() {
+            this.setColour(230);
+            this.appendDummyInput()
+                .appendField("END STATE");
+            this.appendValueInput("NAME")
+                .setCheck("String")
+                .appendField("Name");
+            this.appendValueInput("TEXT")
+                .setCheck("String")
+                .appendField("Text");
+            this.appendStatementInput("OPTS")
+                .setCheck(goBlockly.blocks.opts.types)
+                .appendField("Optional");
+            this.appendValueInput("NEXT")
+                .appendField("Next state");
+            this.setTooltip('A state which displays text and then ends the session.');
+        }
+    };
+})();
+// dummy function
+(function() {
     Blockly.JavaScript.state_menu = function(block) {
         var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
         var value_question = Blockly.JavaScript.valueToCode(block, 'QUESTION', Blockly.JavaScript.ORDER_ATOMIC);

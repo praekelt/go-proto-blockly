@@ -44,6 +44,10 @@
     freetextState.initSvg();
     freetextState.render();
 
+    var endState = Blockly.Block.obtain(Blockly.mainWorkspace, 'state_end');
+    endState.initSvg();
+    endState.render();
+
     var accept_labels = Blockly.Block.obtain(Blockly.mainWorkspace, 'opts_accept_labels');
     accept_labels.initSvg();
     accept_labels.render();
