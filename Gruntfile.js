@@ -48,10 +48,10 @@ module.exports = function (grunt) {
         handlebars: {
             compile: {
                 options: {
-                    namespace: "goBlockly.blocks"
+                    namespace: "goBlockly.templates"
                 },
                 files: {
-                    "go-proto-blockly.js": "templates/*.hbs"
+                    "templates.js": "templates/*.hbs"
                 }
             }
         }
