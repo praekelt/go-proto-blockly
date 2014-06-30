@@ -25,6 +25,8 @@ describe("goBlockly:blocks:states:menu:js", function() {
                 "self.states.add('name', function(name) {",
                 "    return new MenuState(name, {",
                 "        question: 'question',",
+                "", // for choices
+                "", // for opts
                 "    });",
                 "});"
                 ].join('\n')
