@@ -1,0 +1,9 @@
+self.states.add({{{ name }}}, function(name) {
+    return new FreeText(name, {
+        {{#each opts}}
+            {{ label }} : {{{ value }}},
+        {{/each}}
+        question: {{{ question }}},
+        next: {{{ next }}}
+    });
+});
