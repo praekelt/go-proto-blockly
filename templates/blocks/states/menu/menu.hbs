@@ -1,0 +1,7 @@
+self.states.add({{{ name }}}, function(name, opts) {
+    return new MenuState(name, {
+        question: {{{ question }}},
+        choices: {{{ choices }}},
+        next: {{{ next }}}
+    });
+});
