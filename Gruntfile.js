@@ -8,6 +8,7 @@ module.exports = function (grunt) {
     grunt.initConfig({
         paths: {
             src: [
+                'templates.js',
                 'src/index.js',
                 'src/blocks/index.js',
                 'src/blocks/opts/index.js',
@@ -28,6 +29,7 @@ module.exports = function (grunt) {
             src: {
                 files: [
                     'Gruntfile.js',
+                    'templates/**/*.hbs',
                     'src/**/*.js',
                     'test/**/*.test.js'
                 ],
@@ -51,10 +53,10 @@ module.exports = function (grunt) {
                     namespace: "goBlockly.templates"
                 },
                 files: {
-                    "templates.js": "templates/*.hbs"
+                    "templates.js": "templates/**/*.hbs"
                 }
             }
-        }
+        },
 
         karma: {
             dev: {
@@ -71,7 +73,7 @@ module.exports = function (grunt) {
                       'bower_components/blockly/blockly_uncompressed.js',
                       'bower_components/blockly/generators/**/*.js',
                       'bower_components/blockly/blocks/**/*.js',
-                      'bower_components/handlebars',
+                      'bower_components/handlebars/handlebars.js',
                       {
                           pattern: 'bower_components/blockly/**/*',
                           included: false
@@ -96,6 +98,7 @@ module.exports = function (grunt) {
 
     grunt.registerTask('test', [
         'jshint',
+        'handlebars',
         'karma'
     ]);
 

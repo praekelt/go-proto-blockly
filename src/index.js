@@ -1,1 +1,1 @@
-window.goBlockly = {};
+window.goBlockly = window.goBlockly || {};

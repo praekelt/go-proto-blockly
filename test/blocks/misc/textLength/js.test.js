@@ -17,6 +17,6 @@ describe("goBlockly:blocks:textLength:js", function() {
         var block = Blockly.Block.obtain(Blockly.mainWorkspace, 'textLength');
         block.getInput('VALUE').connection.connect(text.outputConnection);
 
-        assert.equal(Blockly.JavaScript.workspaceToCode(), "'foo'.length;\n");
+        assert.equal(Blockly.JavaScript.workspaceToCode(), "'foo'.length;;\n");
     });
 });
