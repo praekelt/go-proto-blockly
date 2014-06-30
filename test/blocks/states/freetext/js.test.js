@@ -11,14 +11,14 @@ describe("goBlockly:blocks:states:freetext:js", function() {
     });
 
     it("should generate a Freetext State", function() {
-        var block = Blockly.Block.obtain(Blockly.mainWorkspace, 'state_end');
+        var block = Blockly.Block.obtain(Blockly.mainWorkspace, 'state_freetext');
 
         var value_name = Blockly.Block.obtain(Blockly.mainWorkspace, 'text');
         value_name.setFieldValue('name', 'TEXT');
         block.getInput('NAME').connection.connect(value_name.outputConnection);
         
         var value_question = Blockly.Block.obtain(Blockly.mainWorkspace, 'text');
-        value_question.setFieldValue('text', 'TEXT');
+        value_question.setFieldValue('question', 'TEXT');
         block.getInput('QUESTION').connection.connect(value_question.outputConnection);
         
         var value_next = Blockly.Block.obtain(Blockly.mainWorkspace, 'text');
@@ -27,7 +27,7 @@ describe("goBlockly:blocks:states:freetext:js", function() {
 
         assert.equal(Blockly.JavaScript.workspaceToCode(), [
                 "self.states.add('name', function(name) {",
-                "    return new FreetextState(name, {",
+                "    return new FreeText(name, {",
                 "",
                 "        question: 'question',",
                 "        next: 'next'",
