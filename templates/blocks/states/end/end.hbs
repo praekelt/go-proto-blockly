@@ -1,0 +1,9 @@
+self.states.add({{{ name }}}, function(name) {
+    return new EndState(name, {
+        {{#each opts}}
+            {{ label }} : {{{ value }}},
+        {{/each}}
+        text: {{{ text }}},
+        next: {{{ next }}}
+    });
+});

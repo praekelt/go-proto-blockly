@@ -62,9 +62,48 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 this["goBlockly"]["templates"]["templates/blocks/states/end/end.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-  var buffer = "";
+  var buffer = "", stack1, helper, functionType="function", escapeExpression=this.escapeExpression, self=this;
 
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n            ";
+  stack1 = helpers.each.call(depth0, (depth0 && depth0.opts), {hash:{},inverse:self.noop,fn:self.program(2, program2, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n        ";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = "", stack1, helper;
+  buffer += "\n                ";
+  if (helper = helpers.label) { stack1 = helper.call(depth0, {hash:{},data:data}); }
+  else { helper = (depth0 && depth0.label); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
+  buffer += escapeExpression(stack1)
+    + " : ";
+  if (helper = helpers.value) { stack1 = helper.call(depth0, {hash:{},data:data}); }
+  else { helper = (depth0 && depth0.value); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += ",\n            ";
+  return buffer;
+  }
 
+  buffer += "self.states.add(";
+  if (helper = helpers.name) { stack1 = helper.call(depth0, {hash:{},data:data}); }
+  else { helper = (depth0 && depth0.name); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += ", function(name) {\n    return new EndState(name, {\n        ";
+  stack1 = helpers['if'].call(depth0, (depth0 && depth0.opts), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n        text: ";
+  if (helper = helpers.text) { stack1 = helper.call(depth0, {hash:{},data:data}); }
+  else { helper = (depth0 && depth0.text); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += ",\n        next: ";
+  if (helper = helpers.next) { stack1 = helper.call(depth0, {hash:{},data:data}); }
+  else { helper = (depth0 && depth0.next); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n    });\n});";
   return buffer;
   });
 
@@ -92,9 +131,9 @@ goBlockly.blocks.opts = {};
 goBlockly.blocks.opts.types = ['accept_labels', 'send_reply', 'continue_session', 'events'];
 (function() {
     Blockly.JavaScript.textLength = function(block) {
-        var value_text = Blockly.JavaScript.valueToCode(
-            block, 'VALUE', Blockly.JavaScript.ORDER_FUNCTION_CALL) || "''";
-        return goBlockly.templates['templates/blocks/misc/textLength/textLength.hbs']({text: value_text});
+        return goBlockly.templates['templates/blocks/misc/textLength/textLength.hbs']({
+                text: Blockly.JavaScript.valueToCode(block, 'VALUE', Blockly.JavaScript.ORDER_FUNCTION_CALL) || "''"
+            });
     };
 })();
 
@@ -244,14 +283,12 @@ goBlockly.blocks.opts.types = ['accept_labels', 'send_reply', 'continue_session'
 // dummy function
 (function() {
     Blockly.JavaScript.state_end = function(block) {
-        var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
-        var value_text = Blockly.JavaScript.valueToCode(block, 'TEXT', Blockly.JavaScript.ORDER_ATOMIC);
-        var statements_opts = Blockly.JavaScript.statementToCode(block, 'OPTS');
-        var value_next = Blockly.JavaScript.valueToCode(block, 'NEXT', Blockly.JavaScript.ORDER_ATOMIC);
-        
-        // TODO: Assemble JavaScript into code variable.
-        var code = value_name + value_text + statements_opts + value_next;
-        return code;
+        return goBlockly.templates['templates/blocks/states/end/end.hbs']({
+                name: Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC),
+                text: Blockly.JavaScript.valueToCode(block, 'TEXT', Blockly.JavaScript.ORDER_ATOMIC),
+                opts: Blockly.JavaScript.statementToCode(block, 'OPTS'),
+                next: Blockly.JavaScript.valueToCode(block, 'NEXT', Blockly.JavaScript.ORDER_ATOMIC)
+            });
     };
 })();
 (function() {
