@@ -10,22 +10,7 @@ describe("goBlockly:blocks:states:end:js", function() {
         document.body.removeChild(el);
     });
 
-    it("should generate an empty End State", function() {
-        Blockly.Block.obtain(Blockly.mainWorkspace, 'state_end');
-        
-        assert.equal(Blockly.JavaScript.workspaceToCode(), [
-                "self.states.add(, function(name) {",
-                "    return new EndState(name, {",
-                "",
-                "        text: ,",
-                "        next:",
-                "    });",
-                "});"
-                ].join('\n')
-            );
-    });
-
-    it("should generate an End State with compulsory values", function() {
+    it("should generate an End State", function() {
         var block = Blockly.Block.obtain(Blockly.mainWorkspace, 'state_end');
 
         var value_name = Blockly.Block.obtain(Blockly.mainWorkspace, 'text');
@@ -51,6 +36,4 @@ describe("goBlockly:blocks:states:end:js", function() {
                 ].join('\n')
             );
     });
-
-    // TODO: generate test with optional values (once opts are defined)
 });
