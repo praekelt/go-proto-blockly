@@ -52,4 +52,6 @@ describe("goBlockly:blocks:states:end:js", function() {
                 ].join('\n')
             );
     });
+
+    // TODO: generate test with optional values (once opts are defined)
 });
