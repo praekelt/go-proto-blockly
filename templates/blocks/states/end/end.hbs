@@ -1,10 +1,8 @@
 self.states.add({{{ name }}}, function(name) {
     return new EndState(name, {
-        {{#if opts}}
-            {{#each opts}}
-                {{ label }} : {{{ value }}},
-            {{/each}}
-        {{/if}}
+        {{#each opts}}
+            {{ label }} : {{{ value }}},
+        {{/each}}
         text: {{{ text }}},
         next: {{{ next }}}
     });
