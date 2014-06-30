@@ -1,7 +1,15 @@
-self.states.add({{{ name }}}, function(name, opts) {
+self.states.add({{{ name }}}, function(name) {
     return new MenuState(name, {
         question: {{{ question }}},
-        choices: {{{ choices }}},
-        next: {{{ next }}}
+        {{#if choices}}
+            choices: [
+                {{#each choices}}
+                    {{{ choices }}},
+                {{/each}}
+                ].join('\n')
+        {{/if}}
+        {{#each opts}}
+            {{ label }} : {{{ value }}},
+        {{/each}}
     });
 });
