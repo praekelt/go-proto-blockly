@@ -3,8 +3,8 @@ self.states.add({{ value_name }}, function(name) {
         {{#if opts}}
             {{#each opts}}
                 {{ label }} : {{ value }},
-            {{\each}}
-        {{\if}}
+            {{/each}}
+        {{/if}}
 
         text: {{ value_text }},
         next: {{ value_next }}

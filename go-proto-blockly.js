@@ -92,9 +92,9 @@ goBlockly.blocks.opts = {};
 goBlockly.blocks.opts.types = ['accept_labels', 'send_reply', 'continue_session', 'events'];
 (function() {
     Blockly.JavaScript.textLength = function(block) {
-        var value_text = Blockly.JavaScript.valueToCode(
-            block, 'VALUE', Blockly.JavaScript.ORDER_FUNCTION_CALL) || "''";
-        return goBlockly.templates['templates/blocks/misc/textLength/textLength.hbs']({text: value_text});
+        return goBlockly.templates['templates/blocks/misc/textLength/textLength.hbs']({
+                text: Blockly.JavaScript.valueToCode(block, 'VALUE', Blockly.JavaScript.ORDER_FUNCTION_CALL) || "''"
+            });
     };
 })();
 
@@ -244,14 +244,12 @@ goBlockly.blocks.opts.types = ['accept_labels', 'send_reply', 'continue_session'
 // dummy function
 (function() {
     Blockly.JavaScript.state_end = function(block) {
-        var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
-        var value_text = Blockly.JavaScript.valueToCode(block, 'TEXT', Blockly.JavaScript.ORDER_ATOMIC);
-        var statements_opts = Blockly.JavaScript.statementToCode(block, 'OPTS');
-        var value_next = Blockly.JavaScript.valueToCode(block, 'NEXT', Blockly.JavaScript.ORDER_ATOMIC);
-        
-        // TODO: Assemble JavaScript into code variable.
-        var code = value_name + value_text + statements_opts + value_next;
-        return code;
+        return goBlockly.templates['templates/blocks/states/end/end.hbs']({
+                name: Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC),
+                text: Blockly.JavaScript.valueToCode(block, 'TEXT', Blockly.JavaScript.ORDER_ATOMIC),
+                opts: Blockly.JavaScript.statementToCode(block, 'OPTS'),
+                next: Blockly.JavaScript.valueToCode(block, 'NEXT', Blockly.JavaScript.ORDER_ATOMIC)
+            });
     };
 })();
 (function() {

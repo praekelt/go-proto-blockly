@@ -6,6 +6,6 @@
                 text: Blockly.JavaScript.valueToCode(block, 'TEXT', Blockly.JavaScript.ORDER_ATOMIC),
                 opts: Blockly.JavaScript.statementToCode(block, 'OPTS'),
                 next: Blockly.JavaScript.valueToCode(block, 'NEXT', Blockly.JavaScript.ORDER_ATOMIC)
-            });;
+            });
     };
 })();
