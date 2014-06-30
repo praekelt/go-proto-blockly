@@ -22,7 +22,8 @@
     "tests"
   ],
   "dependencies": {
-    "blockly": "svn+http://blockly.googlecode.com/svn"
+    "blockly": "svn+http://blockly.googlecode.com/svn",
+    "handlebars": "~1.3.0"
   },
   "devDependencies": {
     "closure-library-read-only": "closurelibrary#*"
