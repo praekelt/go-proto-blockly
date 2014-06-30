@@ -11,9 +11,8 @@ describe("goBlockly:blocks:states:end:js", function() {
     });
 
     it("should generate an empty End State", function() {
-        var block = Blockly.Block.obtain(Blockly.mainWorkspace, 'state_end');
-        block.initSvg(); // to keep jshint happy
-
+        Blockly.Block.obtain(Blockly.mainWorkspace, 'state_end');
+        
         assert.equal(Blockly.JavaScript.workspaceToCode(), [
                 "self.states.add(, function(name) {",
                 "    return new EndState(name, {",
