@@ -1,12 +1,11 @@
-self.states.add({{ value_name }}, function(name) {
+self.states.add({{{ name }}}, function(name) {
     return new EndState(name, {
         {{#if opts}}
             {{#each opts}}
-                {{ label }} : {{ value }},
+                {{ label }} : {{{ value }}},
             {{/each}}
         {{/if}}
-
-        text: {{ value_text }},
-        next: {{ value_next }}
+        text: {{{ text }}},
+        next: {{{ next }}}
     });
 });
