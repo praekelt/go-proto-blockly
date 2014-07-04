@@ -25,10 +25,13 @@ describe("goBlockly:blocks:states:menu:js", function() {
                 "self.states.add('name', function(name) {",
                 "    return new MenuState(name, {",
                 "        question: 'question',",
-                "", // for choices
+                "        choices: [", // for choices
+                "",
+                "        ].join('\\n')",
                 "", // for opts
                 "    });",
-                "});"
+                "});",
+                ""
                 ].join('\n')
             );
     });
