@@ -1,4 +1,3 @@
-// dummy function
 (function() {
     Blockly.JavaScript.state_freetext = function(block) {
         return goBlockly.templates['templates/blocks/states/freetext/freetext.hbs']({
