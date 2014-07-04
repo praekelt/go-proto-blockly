@@ -1,9 +1,7 @@
-// dummy function
 (function() {
     Blockly.JavaScript.opts_continue_session = function(block) {
-        var value_value = Blockly.JavaScript.valueToCode(block, 'VALUE', Blockly.JavaScript.ORDER_ATOMIC);
-        // TODO: Assemble JavaScript into code variable.
-        var code = value_value;
-        return code;
+        return goBlockly.templates['templates/blocks/opts/continue_session/continue_session.hbs']({
+                value: Blockly.JavaScript.valueToCode(block, 'VALUE', Blockly.JavaScript.ORDER_ATOMIC)
+            });
     };
 })();
