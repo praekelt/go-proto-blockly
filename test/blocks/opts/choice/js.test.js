@@ -15,12 +15,12 @@ describe("goBlockly:blocks:opts:choice:js", function() {
 
         var label = Blockly.Block.obtain(Blockly.mainWorkspace, 'text');
         label.setFieldValue('states:label', 'TEXT');
-        block.getInput('LABEL').connection.connect(text.outputConnection);
+        block.getInput('LABEL').connection.connect(label.outputConnection);
 
         var value = Blockly.Block.obtain(Blockly.mainWorkspace, 'text');
         value.setFieldValue('value', 'TEXT');
-        block.getInput('VALUE').connection.connect(text.outputConnection);
+        block.getInput('VALUE').connection.connect(value.outputConnection);
 
-        assert.equal(Blockly.JavaScript.workspaceToCode(), "new Choice('states:label', 'value'),\n");
+        assert.equal(Blockly.JavaScript.workspaceToCode(), "new Choice('states:label', 'value'),");
     });
 });
