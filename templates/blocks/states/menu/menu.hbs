@@ -1,13 +1,11 @@
 self.states.add({{{ name }}}, function(name) {
     return new MenuState(name, {
         question: {{{ question }}},
-        {{#if choices}}
-            choices: [
-                {{#each choices}}
-                    {{{ choices }}},
-                {{/each}}
-                ].join('\n')
-        {{/if}}
+        choices: [
+            {{#each choices}}
+                {{{ choices }}},
+            {{/each}}
+        ].join('\n')
         {{#each opts}}
             {{ label }} : {{{ value }}},
         {{/each}}
