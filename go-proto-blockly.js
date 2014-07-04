@@ -52,18 +52,26 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 this["goBlockly"]["templates"]["templates/blocks/opts/error/error.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-  var buffer = "";
+  var buffer = "", stack1, helper, functionType="function";
 
 
+  buffer += "error: ";
+  if (helper = helpers.error_text) { stack1 = helper.call(depth0, {hash:{},data:data}); }
+  else { helper = (depth0 && depth0.error_text); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
+  if(stack1 || stack1 === 0) { buffer += stack1; }
   return buffer;
   });
 
 this["goBlockly"]["templates"]["templates/blocks/opts/send_reply/send_reply.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-  var buffer = "";
+  var buffer = "", stack1, helper, functionType="function";
 
 
+  buffer += "send_reply: ";
+  if (helper = helpers.value) { stack1 = helper.call(depth0, {hash:{},data:data}); }
+  else { helper = (depth0 && depth0.value); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
+  if(stack1 || stack1 === 0) { buffer += stack1; }
   return buffer;
   });
 
@@ -298,15 +306,14 @@ goBlockly.blocks.opts.types = ['accept_labels', 'send_reply', 'continue_session'
         }
     };
 })();
-// dummy function
 (function() {
     Blockly.JavaScript.opts_error = function(block) {
-        var value_error_text = Blockly.JavaScript.valueToCode(block, 'ERROR_TEXT', Blockly.JavaScript.ORDER_ATOMIC);
-        // TODO: Assemble JavaScript into code variable.
-        var code = value_error_text;
-        return code;
+        return goBlockly.templates['templates/blocks/opts/error/error.hbs']({
+                error_text: Blockly.JavaScript.valueToCode(block, 'ERROR_TEXT', Blockly.JavaScript.ORDER_ATOMIC)
+            });
     };
 })();
+
 (function() {
     Blockly.Blocks.opts_error = {
         init: function() {
