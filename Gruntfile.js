@@ -73,6 +73,7 @@ module.exports = function (grunt) {
                       'bower_components/blockly/blockly_uncompressed.js',
                       'bower_components/blockly/generators/**/*.js',
                       'bower_components/blockly/blocks/**/*.js',
+                      'bower_components/blockly/msg/messages.js',
                       'bower_components/handlebars/handlebars.js',
                       {
                           pattern: 'bower_components/blockly/**/*',
