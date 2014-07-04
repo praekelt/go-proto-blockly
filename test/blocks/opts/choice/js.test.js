@@ -11,14 +11,14 @@ describe("goBlockly:blocks:opts:choice:js", function() {
     });
 
     it("should generate a choice opt with label and value", function() {
-        var block = Blockly.Block.obtain(Blockly.mainWorkspace, 'choice');
+        var block = Blockly.Block.obtain(Blockly.mainWorkspace, 'opts_choice');
 
         var label = Blockly.Block.obtain(Blockly.mainWorkspace, 'text');
-        label.setFieldValue('states:label', 'LABEL');
+        label.setFieldValue('states:label', 'TEXT');
         block.getInput('LABEL').connection.connect(text.outputConnection);
 
         var value = Blockly.Block.obtain(Blockly.mainWorkspace, 'text');
-        value.setFieldValue('value', 'VALUE');
+        value.setFieldValue('value', 'TEXT');
         block.getInput('VALUE').connection.connect(text.outputConnection);
 
         assert.equal(Blockly.JavaScript.workspaceToCode(), "new Choice('states:label', 'value'),\n");
