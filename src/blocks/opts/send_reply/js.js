@@ -1,9 +1,7 @@
-// dummy function
 (function() {
     Blockly.JavaScript.opts_send_reply = function(block) {
-        var value_value = Blockly.JavaScript.valueToCode(block, 'VALUE', Blockly.JavaScript.ORDER_ATOMIC);
-        // TODO: Assemble JavaScript into code variable.
-        var code = value_value;
-        return code;
+        return goBlockly.templates['templates/blocks/opts/send_reply/send_reply.hbs']({
+                value: Blockly.JavaScript.valueToCode(block, 'VALUE', Blockly.JavaScript.ORDER_ATOMIC)
+            });
     };
 })();
