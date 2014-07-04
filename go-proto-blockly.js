@@ -30,9 +30,18 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 this["goBlockly"]["templates"]["templates/blocks/opts/choice/choice.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-  var buffer = "";
+  var buffer = "", stack1, helper, functionType="function";
 
 
+  buffer += "new Choice(";
+  if (helper = helpers.label) { stack1 = helper.call(depth0, {hash:{},data:data}); }
+  else { helper = (depth0 && depth0.label); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += ", ";
+  if (helper = helpers.value) { stack1 = helper.call(depth0, {hash:{},data:data}); }
+  else { helper = (depth0 && depth0.value); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "),";
   return buffer;
   });
 
@@ -61,9 +70,13 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 this["goBlockly"]["templates"]["templates/blocks/opts/send_reply/send_reply.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-  var buffer = "";
+  var buffer = "", stack1, helper, functionType="function";
 
 
+  buffer += "send_reply: ";
+  if (helper = helpers.value) { stack1 = helper.call(depth0, {hash:{},data:data}); }
+  else { helper = (depth0 && depth0.value); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
+  if(stack1 || stack1 === 0) { buffer += stack1; }
   return buffer;
   });
 
@@ -241,20 +254,17 @@ goBlockly.blocks.opts.types = ['accept_labels', 'send_reply', 'continue_session'
         }
     };
 })();
-// dummy function
 (function() {
-    Blockly.JavaScript.choice = function(block) {
-        var value_label = Blockly.JavaScript.valueToCode(block, 'LABEL', Blockly.JavaScript.ORDER_ATOMIC);
-        var value_value = Blockly.JavaScript.valueToCode(block, 'VALUE', Blockly.JavaScript.ORDER_ATOMIC);
-  
-        var code = value_label + value_value;
-
-        return [code + '.length', Blockly.JavaScript.ORDER_MEMBER];
+    Blockly.JavaScript.opts_choice = function(block) {
+        return goBlockly.templates['templates/blocks/opts/choice/choice.hbs']({
+                label: Blockly.JavaScript.valueToCode(block, 'LABEL', Blockly.JavaScript.ORDER_ATOMIC),
+                value: Blockly.JavaScript.valueToCode(block, 'VALUE', Blockly.JavaScript.ORDER_ATOMIC),
+            });
     };
 })();
 
 (function() {
-    Blockly.Blocks.choice = {
+    Blockly.Blocks.opts_choice = {
         init: function() {
             this.setColour(330);
             this.appendDummyInput()
