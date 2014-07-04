@@ -1,9 +1,7 @@
-// dummy function
 (function() {
     Blockly.JavaScript.opts_error = function(block) {
-        var value_error_text = Blockly.JavaScript.valueToCode(block, 'ERROR_TEXT', Blockly.JavaScript.ORDER_ATOMIC);
-        // TODO: Assemble JavaScript into code variable.
-        var code = value_error_text;
-        return code;
+        return goBlockly.templates['templates/blocks/opts/error/error.hbs']({
+                error_text: Blockly.JavaScript.valueToCode(block, 'ERROR_TEXT', Blockly.JavaScript.ORDER_ATOMIC)
+            });
     };
 })();
